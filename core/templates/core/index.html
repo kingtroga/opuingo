@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-10  w-full pt-10 ">
+        {% for product in products %}
+        <a href="{% url 'product_item' product.id %}">
+            <div class="w-4/5 fourq:mb-[50rem] asusd:mb-[46rem] softd:mb-[20rem] surf:mb-[50rem] lg:w-full mx-auto h-96 pt-10 lg:pt-5 mb-[14rem] md:mb-[35rem] lg:mb-[10rem] xl:mb-[24rem] 2xl:mb-[30rem]">
+           
+                <div>
+                     <!--Product Image(s)-->
+                    {% with first_image=product.images.all|first %}
+                        <img src="{{ first_image.image.url }}"  class="rounded-t-xl w-full">
+                    {% endwith %}
+                </div>
+    
+                <div class="p-6 bg-white w-full rounded-b-xl">
+                    <!--Product Name-->
+                    <h2 class="text-2xl danfo-bus poppins-semibold uppercase">{{ product.name }}</h2>
+                     <!--Product Price-->
+                    <p class="text-gray-500 text-sm">Price: {{ product.price }}</p>
+                     <!--Product Color(s)-->
+                    <p class="text-gray-500 text-sm">Colors: {{ product.colors }}</p>
+                     <!--Product Size-->
+                    <p class="text-gray-500 text-sm">Size: {{ product.size }}</p>
+                     <!--Product Code-->
+                    <p class="text-gray-500 text-sm">Code: {{ product.product_code }}</p>
+    
+                </div>
+        
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+
+    </div>
+    
+{% endblock %}
