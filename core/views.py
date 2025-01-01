@@ -12,3 +12,6 @@ def product_item(request, pk):
     return render(request, 'core/product_item.html', {
         'product': product,
     })
+
+# I've never seen a view sponsor `base.html`` 😂
+# but there's a first time for everything
