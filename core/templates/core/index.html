@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-10  w-full pt-10 ">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-10  w-full pt-10 mb-[10rem] ">
         {% for product in products %}
         <a href="{% url 'product_item' product.id %}">
             <div class="w-4/5 fourq:mb-[50rem] asusd:mb-[46rem] softd:mb-[20rem] surf:mb-[50rem] lg:w-full mx-auto h-96 pt-10 lg:pt-5 mb-[14rem] md:mb-[35rem] lg:mb-[10rem] xl:mb-[24rem] 2xl:mb-[30rem]">
